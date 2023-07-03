@@ -151,7 +151,7 @@ return [
     |
     */
 
-    'memory_limit' => 64,
+    'memory_limit' => 900,
 
     /*
     |--------------------------------------------------------------------------
@@ -178,7 +178,7 @@ return [
                 'queue' => ['sendportal-message-dispatch'],
                 'balance' => 'auto',
                 'minProcesses' => 2,
-                'maxProcesses' => 20,
+                'maxProcesses' => 6,
                 'tries' => 3,
             ],
             'supervisor-3' => [
@@ -189,6 +189,29 @@ return [
                 'maxProcesses' => 10,
                 'tries' => 3,
             ],
+            'supervisor-4' => [
+                'connection' => 'redis',
+                'queue' => ['sendportal-imports'],
+                'balance' => 'auto',
+                'timeout'=> 7000,
+                'minProcesses' => 2,
+                'maxProcesses' =>6,
+                'tries' => 1,
+            ],
+            'supervisor-5' => [
+                'connection' => 'redis',
+                'queue' => ['sendportal-split'],
+                'balance' => 'auto',
+                'timeout'=> 7000,
+                'minProcesses' => 2,
+                'maxProcesses' =>6,
+                'tries' => 3,
+            ],
+
+
+
+
+
         ],
         'local' => [
             'supervisor-1' => [
@@ -203,7 +226,7 @@ return [
                 'queue' => ['sendportal-message-dispatch'],
                 'balance' => 'auto',
                 'minProcesses' => 2,
-                'maxProcesses' => 20,
+                'maxProcesses' => 4,
                 'tries' => 3,
             ],
             'supervisor-3' => [
@@ -214,6 +237,30 @@ return [
                 'maxProcesses' => 10,
                 'tries' => 3,
             ],
+            'supervisor-4' => [
+                'connection' => 'redis',
+                'queue' => ['sendportal-imports'],
+                'balance' => 'auto',
+                'timeout' => 7000,
+                'minProcesses' => 2,
+                'maxProcesses' =>6,
+                'tries' => 1,
+            ],
+            'supervisor-5' => [
+                'connection' => 'redis',
+                'queue' => ['sendportal-split'],
+                'balance' => 'auto',
+                'timeout'=> 7000,
+                'minProcesses' => 2,
+                'maxProcesses' =>6,
+                'tries' => 3,
+            ],
+
+
+
+
+
+
         ],
     ],
 ];

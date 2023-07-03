@@ -230,4 +230,26 @@ return [
 
     ],
 
+'db_fields' => [
+        'ignore',
+        'first_name',
+        'last_name',
+        'email',
+        'segments',
+        'unsubscribe_event_id'
+    ],
+
+
+
+
+'db_fields_with' => [
+        'ignore'=>'Ignore this column',
+        'first_name'=>'First Name',
+        'last_name'=>'Last Name',
+        'email'=>'Email',
+        'segments'=>'Segments',
+        'unsubscribe_event_id'=>'Subscribed'
+    ]
+
+
 ];
