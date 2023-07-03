@@ -1,0 +1,54 @@
+{
+    "name": "mettle/sendportal-core",
+    "homepage": "https://github.com/mettle/sendportal-core",
+    "description": "Sendportal core functionality.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [],
+    "require": {
+        "php": "^7.2.5",
+        "ext-json": "*",
+        "aws/aws-sdk-php-laravel": "^3.4",
+        "doctrine/dbal": "^2.10",
+        "illuminate/support": "^7.0",
+        "kriswallsmith/buzz": "^1.1",
+        "laravel/ui": "^2.0",
+        "laravelcollective/html": "^6.0|^7.0",
+        "mailgun/mailgun-php": "^3.0",
+        "mailjet/mailjet-apiv3-php": "^1.4",
+        "nyholm/psr7": "^1.2",
+        "rap2hpoutre/fast-excel": "^1.7",
+        "sendgrid/sendgrid": "^7.3",
+        "wildbit/postmark-php": "^2.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sendportal\\Base\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sendportal\\Base\\SendportalBaseServiceProvider"
+            ]
+        }
+    }
+}
